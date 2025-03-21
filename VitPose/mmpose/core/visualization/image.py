@@ -342,7 +342,7 @@ def imshow_keypoints_3d(
     fig.canvas.draw()
     img_w, img_h = fig.canvas.get_width_height()
     img_vis = np.frombuffer(
-        fig.canvas.tostring_rgb(), dtype=np.uint8).reshape(img_h, img_w, -1)
+        fig.canvas.tostring_argb(), dtype=np.uint8).reshape(img_h, img_w, -1)
     img_vis = mmcv.rgb2bgr(img_vis)
 
     plt.close(fig)
